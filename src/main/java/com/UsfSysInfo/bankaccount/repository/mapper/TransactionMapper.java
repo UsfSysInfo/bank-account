@@ -1,7 +1,7 @@
-package com.example.katabank.repository.mapper;
+package com.UsfSysInfo.bankaccount.repository.mapper;
 
-import com.example.katabank.model.Transaction;
-import com.example.katabank.repository.TransactionEntity;
+import com.UsfSysInfo.bankaccount.repository.TransactionEntity;
+import com.UsfSysInfo.bankaccount.model.Transaction;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

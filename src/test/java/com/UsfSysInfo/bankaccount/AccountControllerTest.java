@@ -1,6 +1,6 @@
-package com.example.katabank;
+package com.UsfSysInfo.bankaccount;
 
-import com.example.katabank.repository.TransactionRepository;
+import com.UsfSysInfo.bankaccount.repository.TransactionRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +33,9 @@ public class AccountControllerTest {
 
         mockMvc.perform(get("/account/statment"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].amount", is(500)))
-                .andExpect(jsonPath("$[0].balance", is(500)));
+                .andExpect(jsonPath("$.statement", hasSize(1)))
+                .andExpect(jsonPath("$.finalBalance").value(500))
+                .andExpect(jsonPath("$.message").value("Statement retrieved successfully"));
     }
 
     @Test
@@ -45,9 +45,11 @@ public class AccountControllerTest {
 
         mockMvc.perform(get("/account/statment"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[1].amount", is(-400)))
-                .andExpect(jsonPath("$[1].balance", is(600)));
+                .andExpect(jsonPath("$.statement", hasSize(2)))
+                .andExpect(jsonPath("$.statement[1].amount", is(-400)))
+                .andExpect(jsonPath("$.statement[1].balance", is(600)))
+                .andExpect(jsonPath("$.finalBalance", is(600)))
+                .andExpect(jsonPath("$.message", is("Statement retrieved successfully")));
     }
 
 

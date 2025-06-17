@@ -1,11 +1,11 @@
-package com.example.katabank.services;
+package com.UsfSysInfo.bankaccount.services;
 
-import com.example.katabank.exception.InsufficientFundsException;
-import com.example.katabank.model.StatmentLine;
-import com.example.katabank.model.Transaction;
-import com.example.katabank.repository.TransactionEntity;
-import com.example.katabank.repository.TransactionRepository;
-import com.example.katabank.repository.mapper.TransactionMapper;
+import com.UsfSysInfo.bankaccount.exception.InsufficientFundsException;
+import com.UsfSysInfo.bankaccount.model.StatmentLine;
+import com.UsfSysInfo.bankaccount.model.Transaction;
+import com.UsfSysInfo.bankaccount.repository.TransactionEntity;
+import com.UsfSysInfo.bankaccount.repository.TransactionRepository;
+import com.UsfSysInfo.bankaccount.repository.mapper.TransactionMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,7 +52,7 @@ public class AccountService {
                         .build());
         transactionRepository.save(transactionEntity);
 
-        log.info("Withdrew {} from account. New balance: {}", amount, currentBalance-amount);
+        log.info("Withdraw {} from account. New balance: {}", amount, currentBalance-amount);
     }
 
     public int getCurrentBalance() {
@@ -73,7 +73,12 @@ public class AccountService {
 
         for (TransactionEntity tx : transactions) {
             balance += tx.getAmount();
-            statment.add(new StatmentLine(tx.getDate(), tx.getAmount(), balance));
+            statment.add(
+                    StatmentLine.builder()
+                            .amount(tx.getAmount())
+                            .date(tx.getDate())
+                            .balance(balance)
+                            .build());
         }
 
         return statment;

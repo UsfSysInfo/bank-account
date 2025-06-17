@@ -1,4 +1,4 @@
-package com.example.katabank.repository;
+package com.UsfSysInfo.bankaccount.repository;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,14 +1,14 @@
-package com.example.katabank;
+package com.UsfSysInfo.bankaccount;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KataBankApplication {
+public class BankAccountApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(KataBankApplication.class, args);
+        SpringApplication.run(BankAccountApplication.class, args);
     }
 
 }

@@ -1,10 +1,10 @@
-package com.example.katabank;
+package com.UsfSysInfo.bankaccount;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KataBankApplicationTests {
+class BankAccountApplicationTests {
 
     @Test
     void contextLoads() {

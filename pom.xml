@@ -8,11 +8,11 @@
         <version>3.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>kataBank</artifactId>
+    <groupId>com.usfSysInfo</groupId>
+    <artifactId>bankaccount</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kataBank</name>
-    <description>kataBank</description>
+    <name>bankAccount</name>
+    <description>bank account</description>
     <url/>
     <licenses>
         <license/>

@@ -1,4 +1,4 @@
-package com.example.katabank.exception;
+package com.UsfSysInfo.bankaccount.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
