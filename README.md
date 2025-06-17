@@ -15,13 +15,17 @@ Prérecuis techniques:
 # Description
 # ########################################################################################
 
-La solution proposée consiste à mettre en place un API REST (en utilisant springboot et une BDD H2 pour stocker \nles données), qui met à disposition de l'utlisateur un ensemble de services qui lui permettent de : \n
-	- Effectuer des transactions sur son compte bancaire. Une transaction peut être : \n
-		- Depot (Deposit) de l'argent ===> endpoint : /account/deposit?amount=<value> \n
-		- Retrait (Withdraw) de l'argent ===> endpoint : /account/withdraw?amount=<value> \n
-	- Afficher son relevé de compte ===> endpoint : /account/statment\n
+La solution proposée consiste à mettre en place un API REST (en utilisant springboot et une BDD H2 pour stocker \nles données), qui met à disposition de l'utlisateur un ensemble de services qui lui permettent de :
+
+	- Effectuer des transactions sur son compte bancaire. Une transaction peut être :
  
-L'utilisateur peut mettre sur son compte bancaire autant d'argent qu'il veut \n
+		- Depot (Deposit) de l'argent ===> endpoint : /account/deposit?amount=<value>
+  
+		- Retrait (Withdraw) de l'argent ===> endpoint : /account/withdraw?amount=<value>
+  
+	- Afficher son relevé de compte ===> endpoint : /account/statment
+ 
+L'utilisateur peut mettre sur son compte bancaire autant d'argent qu'il veut
 L'utilisateur peut retirer de l'argent dans le cas où il a suffisemment d'argent sur son compte bancaire
 
 # ########################################################################################
